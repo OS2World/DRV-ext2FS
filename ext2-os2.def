@@ -1,0 +1,82 @@
+;
+; $Header: e:\\netlabs.cvs\\ext2fs/ext2-os2.def,v 1.1 2001/05/09 17:45:19 umoeller Exp $
+;
+
+; 32 bits Linux ext2 file system driver for OS/2 WARP - Allows OS/2 to
+; access your Linux ext2fs partitions as normal drive letters.
+; Copyright (C) 1995, 1996, 1997  Matthieu WILLM (willm@ibm.net)
+;
+; This program is free software; you can redistribute it and/or modify
+; it under the terms of the GNU General Public License as published by
+; the Free Software Foundation; either version 2 of the License, or
+; (at your option) any later version.
+;
+; This program is distributed in the hope that it will be useful,
+; but WITHOUT ANY WARRANTY; without even the implied warranty of
+; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+; GNU General Public License for more details.
+;
+; You should have received a copy of the GNU General Public License
+; along with this program; if not, write to the Free Software
+; Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+LIBRARY ext2-os2
+STUB NONE
+
+DESCRIPTION '32 bits Linux ext2 file system driver for OS/2 - Copyright (C) Matthieu WILLM 1995, 1996, 1997'
+
+;SEGMENTS
+;    DATA16 class 'DATA16' NONSHARED
+;    DATA32 class 'DATA32' NONSHARED
+;    CODE16 class 'CODE16' NONSHARED
+;    CODE32 class 'CODE32' NONSHARED
+
+DATA PRELOAD SINGLE SHARED MOVABLE
+CODE PRELOAD MOVABLE
+
+EXPORTS
+    FS_ALLOCATEPAGESPACE
+    FS_ATTACH
+    FS_CANCELLOCKREQUEST             ; Not yet implemented
+    FS_CHDIR
+    FS_CHGFILEPTR
+    FS_CLOSE
+    FS_COMMIT
+    FS_COPY
+    FS_DELETE
+    FS_DOPAGEIO
+    FS_EXIT
+    FS_FILEATTRIBUTE
+    FS_FILEINFO
+    FS_FILEIO                        ; Not yet implemented
+    FS_FILELOCKS                     ; Not yet implemented
+    FS_FINDCLOSE
+    FS_FINDFIRST
+    FS_FINDFROMNAME
+    FS_FINDNEXT
+    FS_FINDNOTIFYCLOSE              ; Obsolete in OS/2 WARP
+    FS_FINDNOTIFYFIRST              ; Obsolete in OS/2 WARP
+    FS_FINDNOTIFYNEXT               ; Obsolete in OS/2 WARP
+    FS_FLUSHBUF
+    FS_FSCTL
+    FS_FSINFO
+    FS_INIT
+    FS_IOCTL
+    FS_MKDIR
+    FS_MOUNT
+    FS_MOVE
+    FS_NEWSIZE
+    FS_NMPIPE
+    FS_OPENCREATE
+    FS_OPENPAGEFILE
+    FS_PATHINFO
+    FS_PROCESSNAME
+    FS_READ
+    FS_RMDIR
+    FS_SETSWAP
+    FS_SHUTDOWN
+;   FS_VERIFYUNCNAME                N/A : local FSD
+    FS_WRITE
+
+    FS_ATTRIBUTE
+    FS_NAME

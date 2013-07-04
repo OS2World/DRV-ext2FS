@@ -1,0 +1,43 @@
+;
+; $Header: e:\\netlabs.cvs\\ext2fs/src/vfsapi/vfsapi.def,v 1.1 2001/05/09 17:48:10 umoeller Exp $
+;
+
+; Linux ext2 file system driver for OS/2 2.x and WARP - Allows OS/2 to     
+; access your Linux ext2fs partitions as normal drive letters.
+; Copyright (C) 1995, 1996 Matthieu WILLM 
+;
+; This program is free software; you can redistribute it and/or modify
+; it under the terms of the GNU General Public License as published by
+; the Free Software Foundation; either version 2 of the License, or
+; (at your option) any later version.
+;
+; This program is distributed in the hope that it will be useful,
+; but WITHOUT ANY WARRANTY; without even the implied warranty of
+; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+; GNU General Public License for more details.
+;
+; You should have received a copy of the GNU General Public License
+; along with this program; if not, write to the Free Software
+; Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+LIBRARY vfsapi INITINSTANCE TERMINSTANCE
+DATA MULTIPLE NONSHARED
+DESCRIPTION 'Linux ext2fs file system driver for OS/2 - Copyright (C) Matthieu WILLM 1995'
+EXPORTS
+;
+; From vfsapi/stat.c
+;
+	vfs_fstat	@1
+	vfs_stat	@2
+;
+; From vfsapi/sync.c
+;
+	vfs_sync	@3
+;
+; From vfsapi/link.c
+;
+	vfs_link	@4
+;
+; From vfsapi/ioctl.c
+;
+	vfs_ioctl	@5
